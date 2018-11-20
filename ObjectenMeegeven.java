@@ -7,7 +7,8 @@ public class ObjectenMeegeven {
         persoon.naam = "Jeroen";
         Basgitaar basgitaar = new Basgitaar();
         basgitaar.merk = "Sandberg";
-        basgitaar.snaren.nieuwSetjeSnaren = false;
+        basgitaar.snaren.nieuwSetjeSnaren = true;
+        basgitaar.heeftSnaren = true;
         basgitaar.hebJeSnaren();
         persoon.legSnarenOp(basgitaar);
     }
@@ -16,8 +17,9 @@ public class ObjectenMeegeven {
 class Persoon {
     String naam;
     void legSnarenOp(Basgitaar basgitaar){
-        if (basgitaar.snaren.nieuwSetjeSnaren) {
+        if (basgitaar.heeftSnaren == false) {
             System.out.println("ik leg nu snaren op de " + basgitaar.merk);
+            basgitaar.heeftSnaren = true;
         } else {
             System.out.println("er liggen al snaren op");
         }
@@ -25,6 +27,7 @@ class Persoon {
 }
 
 class Basgitaar {
+    boolean heeftSnaren;
     String merk;
     Snaren snaren = new Snaren();
     Snaren hebJeSnaren() {
