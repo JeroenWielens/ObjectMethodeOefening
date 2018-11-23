@@ -37,6 +37,7 @@ class Basgitaar {
         } else {
             System.out.println("Hier heb je nieuwe snaren");
             snaren.nieuwSetjeSnaren = true;
+            heeftSnaren = true;
             return new Snaren();
         }
     }
